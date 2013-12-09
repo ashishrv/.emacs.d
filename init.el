@@ -3,7 +3,7 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
-;; No splash screen please ... jeez
+;; No splash screen please
 (setq inhibit-startup-message t)
 
 ;; Set path to dependencies
@@ -18,6 +18,23 @@
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
 
-;; Are we on a mac?
+;; on mac?
 (setq is-mac (equal system-type 'darwin))
 
+;; setup custom theme
+(load-theme 'zenburn t)
+(set-cursor-color "firebrick")
+
+;; Setup packages
+(require 'setup-package)
+
+;; Install extensions if they're missing
+(defun init--install-packages ()
+  (packages-install
+   '(zenburn
+    )))
+    
+
+    
+
+     
