@@ -21,9 +21,12 @@
 ;; on mac?
 (setq is-mac (equal system-type 'darwin))
 
+;; setup customized theme
+(require 'setup-themes)
+
 ;; setup custom theme
-;; (load-theme 'zenburn t)
-;; (set-cursor-color "firebrick")
+ (load-theme 'zenburn t)
+ (set-cursor-color "red")
 
 ;; Setup packages
 (require 'setup-package)
@@ -34,6 +37,7 @@
    '(zenburn
     )))
     
+
 
     
 

@@ -6,8 +6,6 @@
   (when (file-directory-p path)
     (add-to-list 'custom-theme-load-path path)))
 
-;; setup custom theme
- (load-theme 'zenburn t)
- (set-cursor-color "firebrick")
+
 
 (provide 'setup-themes)
