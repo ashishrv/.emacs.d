@@ -22,8 +22,8 @@
 (setq is-mac (equal system-type 'darwin))
 
 ;; setup custom theme
-(load-theme 'zenburn t)
-(set-cursor-color "firebrick")
+;; (load-theme 'zenburn t)
+;; (set-cursor-color "firebrick")
 
 ;; Setup packages
 (require 'setup-package)
