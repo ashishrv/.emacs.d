@@ -4,3 +4,21 @@
 [submodule "site-lisp/web-mode"]
 	path = site-lisp/web-mode
 	url = https://github.com/fxbois/web-mode.git
+[submodule "themes/solarized-emacs"]
+	path = themes/solarized-emacs
+	url = https://github.com/bbatsov/solarized-emacs
+[submodule "themes/noctilux-theme"]
+	path = themes/noctilux-theme
+	url = https://github.com/stafu/noctilux-theme
+[submodule "themes/soft-stone-theme"]
+	path = themes/soft-stone-theme
+	url = https://github.com/mswift42/soft-stone-theme
+[submodule "themes/emacs-leuven-theme"]
+	path = themes/emacs-leuven-theme
+	url = https://github.com/fniessen/emacs-leuven-theme
+[submodule "themes/soft-charcoal-theme"]
+	path = themes/soft-charcoal-theme
+	url = https://github.com/mswift42/soft-charcoal-theme
+[submodule "themes/ample-theme"]
+	path = themes/ample-theme
+	url = https://github.com/jordonbiondo/ample-theme
