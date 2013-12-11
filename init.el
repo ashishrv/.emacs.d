@@ -44,7 +44,7 @@
 
 
 (require 'init-package) ;; Setup packages
-(require 'init-themes)  ;; setup customized theme
+(require 'init-theme)  ;; setup customized theme
 (require 'init-web) ;; Setup packages
 
 
