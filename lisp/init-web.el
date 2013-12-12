@@ -1,4 +1,6 @@
-;; http://web-mode.org/
+;;----------------------------------------------------------------------------
+;;  web mode: http://web-mode.org/
+;;----------------------------------------------------------------------------
 
 (require 'web-mode)
 
@@ -37,9 +39,14 @@
 (define-key web-mode-map (kbd "C-o") 'web-mode-tag-match)
 
 
-(setq web-mode-enable-block-face t)
-(setq web-mode-enable-part-face t)
+;;(setq web-mode-enable-block-face t)
+;;(setq web-mode-enable-part-face t)
 (setq web-mode-enable-comment-keywords t)
-(setq web-mode-enable-current-element-highlight t)
+;;(setq web-mode-enable-current-element-highlight t)
+
+(setq web-mode-tag-auto-close-style 0)
+
+
+(local-set-key (kbd "RET") 'newline-and-indent)
 
 (provide 'init-web)
