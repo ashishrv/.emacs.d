@@ -25,3 +25,15 @@
 [submodule "site-lisp/emacs-for-python"]
 	path = site-lisp/emacs-for-python
 	url = https://github.com/gabrielelanaro/emacs-for-python
+[submodule "mumamo-mode"]
+	path = mumamo-mode
+	url = https://github.com/traceypooh/mumamo-mode
+[submodule "site-lisp/mumamo-mode"]
+	path = site-lisp/mumamo-mode
+	url = https://github.com/traceypooh/mumamo-mode
+[submodule "site-lisp/org-mode"]
+	path = site-lisp/org-mode
+	url = git://orgmode.org/org-mode.git
+[submodule "site-lisp/deft"]
+	path = site-lisp/deft
+	url = git://jblevins.org/git/deft.git

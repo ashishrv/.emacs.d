@@ -48,9 +48,14 @@
 ;;----------------------------------------------------------------------------
 
 (require 'init-package) ;; Setup packages
+(require 'setup-personalization) ;; Personalization
 (require 'init-python) ;; Setup python emacs environment
-(require 'init-web) ;; Setup packages
+;;(require 'init-web) ;; Setup packages
 (require 'init-theme)  ;; setup customized theme
+(require 'setup-orgmode)  ;; setup customized theme
+(require 'setup-notestaking)
+(require 'dsvn)
+
 
 ;;----------------------------------------------------------------------------
 ;; Other global requirements 
