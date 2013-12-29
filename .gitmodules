@@ -37,3 +37,9 @@
 [submodule "site-lisp/deft"]
 	path = site-lisp/deft
 	url = git://jblevins.org/git/deft.git
+[submodule "site-lisp/yasnippet"]
+	path = site-lisp/yasnippet
+	url = https://github.com/capitaomorte/yasnippet.git
+[submodule "snippets"]
+	path = snippets
+	url = https://github.com/ashishrv/snippets

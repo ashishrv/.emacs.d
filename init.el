@@ -48,12 +48,13 @@
 ;;----------------------------------------------------------------------------
 
 (require 'init-package) ;; Setup packages
-(require 'setup-personalization) ;; Personalization
+(require 'setup-personalization) ;; Emacs Personalization
 (require 'init-python) ;; Setup python emacs environment
 ;;(require 'init-web) ;; Setup packages
-(require 'init-theme)  ;; setup customized theme
-(require 'setup-orgmode)  ;; setup customized theme
-(require 'setup-notestaking)
+(require 'init-theme)  ;; Setup customized theme
+(require 'setup-orgmode)  ;; org mode for PIM and other org text editing
+(require 'setup-notestaking) ;; Deft for notes taking
+(require 'setup-mysnippets)  ;; yasnippets setup for snippets in emacs
 (require 'dsvn)
 
 
