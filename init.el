@@ -50,14 +50,15 @@
 (require 'init-package) ;; Setup packages
 (require 'dsvn)
 
-(require 'setup-personalization) ;; Emacs Personalization
+
 (require 'init-python) ;; Setup python emacs environment
 ;;(require 'init-web) ;; Setup packages
 (require 'init-theme)  ;; Setup customized theme
 (require 'setup-orgmode)  ;; org mode for PIM and other org text editing
 (require 'setup-notestaking) ;; Deft for notes taking
 (require 'setup-mysnippets)  ;; yasnippets setup for snippets in emacs
-
+(require 'setup-multiplecursors)  ;; multiple-cursors for multiple edits 
+(require 'setup-personalization) ;; Emacs Personalization
 
 
 ;;----------------------------------------------------------------------------
@@ -72,3 +73,4 @@
 (setq make-backup-files nil)
 (setenv "PAGER" "/bin/cat")
 
+(put 'upcase-region 'disabled nil)

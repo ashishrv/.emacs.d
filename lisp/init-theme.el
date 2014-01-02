@@ -11,6 +11,8 @@
 (add-to-list 'custom-theme-load-path (concat user-emacs-directory "themes/soft-charcoal-theme"))
 (add-to-list 'custom-theme-load-path (concat user-emacs-directory "themes/ample-theme"))
 (add-to-list 'custom-theme-load-path (concat user-emacs-directory "themes/solarized-emacs"))
+(add-to-list 'custom-theme-load-path (concat user-emacs-directory "themes/moe-theme"))
+(add-to-list 'custom-theme-load-path (concat user-emacs-directory "themes/soft-morning-theme"))
 
 ;;----------------------------------------------------------------------------
 ;; Some package requirements: color-theme package and themes
@@ -27,23 +29,22 @@
 ;;     (color-theme-clarity)))
 
 ;;----------------------------------------------------------------------------
-;; The new deftheme
+;; The default theme
 ;;----------------------------------------------------------------------------
 
-(load-theme 'tangotango t)
+;;(load-theme 'tangotango t)
 
-;;----------------------------------------------------------------------------
-;; Other themes that you could load with M-x load-theme
-;;----------------------------------------------------------------------------
-
-;;;; setup custom theme
-;; (load-theme 'zenburn t)
+;; Other themes
+;;(load-theme 'moe-dark t)
+;;(load-theme 'moe-light t)
+;;(load-theme 'soft-stone t)
+;;(load-theme 'zenburn t)
 ;; (load-theme 'solarized-light t)
 ;; (load-theme 'noctilux t)
 ;; (load-theme 'leuven t)
 ;; (load-theme 'soft-charcoal t)
-;; (load-theme 'soft-stone t)
 ;; (load-theme 'ample t)
+(load-theme 'soft-morning)
 
 ;;----------------------------------------------------------------------------
 ;; Graphics and looks
@@ -84,16 +85,6 @@
 ;;(setq-default indicate-buffer-boundaries 'left)
 ;;(setq-default indicate-empty-lines +1)
 
-;;----------------------------------------------------------------------------
-;; Mode line
-;;----------------------------------------------------------------------------
-
-(require 'smart-mode-line)
-(sml/setup)
-
-(add-to-list 'sml/replacer-regexp-list '("^~/work/apple/svnrepo/ml" ":Ml:"))
-(add-to-list 'sml/replacer-regexp-list '("~/work/apple/svnrepo/platform" ":PLAT:"))
-(add-to-list 'sml/replacer-regexp-list '("~/work/apple/svnrepo/projects" ":PROJ:"))
 
 
 ;;----------------------------------------------------------------------------
@@ -106,22 +97,6 @@
       scroll-conservatively 10000
       scroll-preserve-screen-position 1)
 
-;;----------------------------------------------------------------------------
-;; Formatting and white-space
-;;----------------------------------------------------------------------------
-	
-(setq-default indent-tabs-mode nil)
-
-(defun my/clean-buffer-formatting ()
-  "Indent and clean up the buffer"
-  (interactive)
-  (indent-region (point-min) (point-max))
-  (whitespace-cleanup))
-
-(global-set-key "\C-cn" 'my/clean-buffer-formatting)
-
-(defun my/general-formatting-hooks ()
-  (setq show-trailing-whitespace 't))
 
 
 (provide 'init-theme)

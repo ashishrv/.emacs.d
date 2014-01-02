@@ -18,20 +18,23 @@
 (setq org-agenda-files '("~/Dropbox/Private/emac-org-notes/organizer.org"
 					     "~/Dropbox/Private/emac-org-notes/diary.org"
 						 "~/Dropbox/Private/emac-org-notes/habits.org"
-						 "~/work/work-logs.org"
-                         "~/work/apple-projects.org"
-						 "~/work/infosys-projects.org"
-						 "~/work/personal-projects.org"))
+						 "~/work/orgnotes/work-logs.org"
+                         "~/work/orgnotes/apple-projects.org"
+						 "~/work/orgnotes/infosys-projects.org"
+						 "~/work/orgnotes/personal-projects.org"))
 
 
 ;;(setq org-directory "~/Dropbox/Private/emac-org-notes") ;; Org Directory
 ;;(setq org-default-notes-file "~/Dropbox/Private/emac-org-notes/organizer.org") ;; Default task capture bucket
 
+(add-to-list 'org-modules 'org-habit)
+(require 'org-habit)
+
 ;;----------------------------------------------------------------------------
 ;; Setup chooser for org notes
 ;;----------------------------------------------------------------------------
 
-(defvar my-work-path "~/work/")
+(defvar my-work-path "~/work/orgnotes/")
 (defvar my-personal-path "~/Dropbox/Private/emac-org-notes/")
 
 (defun my-work-org-files ()
@@ -64,11 +67,48 @@
 ;; Agenda views
 ;;----------------------------------------------------------------------------
 
+;; Custom Agenda Views
+(setq org-agenda-custom-commands
+	'(("p" agenda "personal"
+		((org-agenda-ndays 28)
+		(org-agenda-files '("~/work/orgnotes/personal-projects.org"
+							"~/Dropbox/Private/emac-org-notes/organizer.org"
+							"~/Dropbox/Private/emac-org-notes/habits.org"
+							)
+		)
+		(org-agenda-text-search-extra-files nil)
+		)
+	 )
+	
+	 ("w" agenda "project work"
+		((org-agenda-ndays 10)
+		(org-agenda-files '("~/work/orgnotes/apple-projects.org"
+							"~/work/orgnotes/work-logs.org"
+							)
+		)
+		(org-agenda-text-search-extra-files nil)
+		)
+	 )
+	 ("o" agenda "Infosys"
+		((org-agenda-ndays 10)
+		(org-agenda-files '("~/work/orgnotes/infosys-projects.org"
+							)
+		)
+		(org-agenda-text-search-extra-files nil)
+		)
+	 )
+	("d" agenda "Diary"
+		((org-agenda-files '("~/Dropbox/Private/emac-org-notes/diary.org"
+							)
+		)
+		(org-agenda-text-search-extra-files nil)
+		)
+	 )
+))
 ;; Formatting for viewing agenda with time format
-(setq org-agenda-time-grid
-      '((daily today require-timed)
-       "----------------"
-       (800 1000 1200 1400 1600 1800 2000 2200)))
+(setq org-agenda-time-grid '((daily today today)
+                             #("----------------" 0 16 (org-heading t))
+                             (800 1000 1200 1400 1600 1800 2000 2200)))
 
 ;; column / tabular view of tasks
 (setq org-columns-default-format "%50ITEM %12SCHEDULED %TODO %3PRIORITY %Effort{:} %TAGS")
@@ -83,6 +123,9 @@
 (setq org-hide-leading-stars t)
 (setq org-odd-level-only nil) 
 (setq org-insert-heading-respect-content nil)
+(setq org-agenda-start-on-weekday 0)
+
+(setq org-upcoming-deadline '(:foreground "blue" :weight bold))
 
 
 ;;----------------------------------------------------------------------------
@@ -113,7 +156,7 @@
 		("m" "Meeting" entry (function my-orgprojectfile)
 		 "* MEETING with %? :MEETING:\n%U" :clock-in t :clock-resume t)
 		
-		("l" "Log Time" entry (file+datetree "~/work/work-logs.org" ) 
+		("l" "Log Time" entry (file+datetree "~/work/orgnotes/work-logs.org" ) 
 		 "** %U - %^{Activity}  :TIME:")
 		
 		("p" "Personal Notes" entry (file "~/Dropbox/Private/emac-org-notes/organizer.org" )
@@ -123,7 +166,7 @@
 		 "* %?	:DIARY:\n%U\n" :clock-in t :clock-resume t)
 		
         ("h" "Habit" entry (file "~/Dropbox/Private/emac-org-notes/habits.org")
-		 "* NEXT %?	:HABIT:\n%U\n%a\nSCHEDULED: %(format-time-string \"<%Y-%m-%d %a .+1d/3d>\")\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n")
+		 "* NEXT %?	:HABIT:\n%U\n%a\nSCHEDULED: %(format-time-string \"<%Y-%m-%d %a .+1d/3d>\")\n:PROPERTIES:\n:STYLE: habit\n:END:\n")
 
 ))
 

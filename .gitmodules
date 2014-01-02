@@ -43,3 +43,18 @@
 [submodule "snippets"]
 	path = snippets
 	url = https://github.com/ashishrv/snippets
+[submodule "site-lisp/smart-mode-line"]
+	path = site-lisp/smart-mode-line
+	url = https://github.com/Bruce-Connor/smart-mode-line.git
+[submodule "site-lisp/dash"]
+	path = site-lisp/dash
+	url = https://github.com/magnars/dash.el
+[submodule "site-lisp/multiple-cursors"]
+	path = site-lisp/multiple-cursors
+	url = https://github.com/magnars/multiple-cursors.el
+[submodule "themes/moe-theme"]
+	path = themes/moe-theme
+	url = https://github.com/kuanyui/moe-theme.el
+[submodule "themes/soft-morning-theme"]
+	path = themes/soft-morning-theme
+	url = https://github.com/mswift42/soft-morning-theme
